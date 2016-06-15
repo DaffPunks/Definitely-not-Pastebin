@@ -44,7 +44,9 @@ class PastController extends Controller
     public function viewpaste(Request $request, Paste $paste)
     {
         return view('somepaste', [
-            'pastes' => Paste::where('id', $paste->id )->get()
+            'pastes' => Paste::where('id', $paste->id )
+                ->orderBy('created_at', 'asc')
+                ->get()
         ]);
     }
     
@@ -57,7 +59,7 @@ class PastController extends Controller
         }
         else{
             return view('main', [
-                'pastenames' => Paste::orderBy('id', 'asc')->get()
+                'pastenames' => Paste::orderBy('id', 'desc')->take(10)->get()
             ]);
         }
     }

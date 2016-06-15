@@ -11,7 +11,8 @@ class PasteRepository
     public function forUser(User $user)
     {
         return Paste::where('owner_id', $user->id)
-            ->orderBy('created_at', 'asc')
+            ->orderBy('created_at', 'desc')
+            ->take(10)
             ->get();
     }
 
