@@ -47,6 +47,12 @@ a{
   text-decoration: none;
   color: #2e3436;
 }
+h2{
+    color: #000;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+}
 textarea, input {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -132,7 +138,10 @@ textarea, input {
   position: absolute;
   right: 0;
 }
-
 .rec-title{
   padding: 10px;
+}
+.recentlink{
+  color: #424749 !important;
+  text-decoration: underline !important;
 }

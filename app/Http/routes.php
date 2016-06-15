@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Route::post('paste', 'PastController@sendpaste');
 
-
 Route::get('/', 'PastController@index');
 
-
-
 Route::auth();
+
+Route::get('/{paste}', 'PastController@viewpaste');
+

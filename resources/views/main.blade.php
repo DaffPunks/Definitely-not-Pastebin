@@ -4,7 +4,7 @@
 
     <div class="pastefield">
         <div class="wrap">
-            @include('paste', ['data' => $pastes])
+            @include('paste')
         </div>
     </div>
     <div class="recent">

@@ -1,11 +1,10 @@
 @if(Auth::check())
-    Your recent 10
-    @foreach($pastenames as $names)
-        <Br> {{  $names->name  }}
-    @endforeach
+    <h2>Your recent 10</h2>
 @else
-    Recent 10
-    @foreach($pastenames as $names)
-        <Br> {{  $names->name  }}
-    @endforeach
+    <h2>Recent 10</h2>
 @endif
+    @foreach($pastenames as $names)
+        <div class="recentlink">
+            <a href="{{url('/' . $names->id)}}">{{  $names->name  }}</a>
+        </div>
+    @endforeach

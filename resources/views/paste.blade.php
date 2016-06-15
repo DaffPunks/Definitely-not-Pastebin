@@ -20,12 +20,12 @@
         </div>
     </form>
     <div class="container">
-    @foreach($data as $paste)
+        <!--
         <div class="somepaste">
             <div class="pastetext">
-                <textarea type="text">{{ $paste->text }}</textarea>
+                <textarea type="text"></textarea>
             </div>
         </div>
-    @endforeach
+            -->
     </div>
 </div>

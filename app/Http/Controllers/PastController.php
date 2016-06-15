@@ -41,10 +41,10 @@ class PastController extends Controller
         return redirect('/');
     }
 
-    public function viewpaste()
+    public function viewpaste(Request $request, Paste $paste)
     {
-        return view('paste', [
-            
+        return view('somepaste', [
+            'pastes' => Paste::where('id', $paste->id )->get()
         ]);
     }
     
@@ -52,14 +52,12 @@ class PastController extends Controller
     {
         if(Auth::check()) {
             return view('main', [
-                'pastenames' => $this->pastes->forUser($request->user()),
-                'pastes' => Paste::orderBy('id', 'asc')->get()
+                'pastenames' => $this->pastes->forUser($request->user())
             ]);
         }
         else{
             return view('main', [
-                'pastenames' => Paste::orderBy('id', 'asc')->get(),
-                'pastes' => Paste::orderBy('id', 'asc')->get()
+                'pastenames' => Paste::orderBy('id', 'asc')->get()
             ]);
         }
     }
